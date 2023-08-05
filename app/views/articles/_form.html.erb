@@ -12,6 +12,10 @@
   <% end %>
 
   <div>
+    <%= form.select :status, Article::VALID_STATUSES, selected: 'public' %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
