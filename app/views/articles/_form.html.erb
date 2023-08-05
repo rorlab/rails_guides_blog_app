@@ -1,19 +1,23 @@
 <%= form_with model: article do |form| %>
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-  <% article.errors.full_messages_for :title do |message| %>
-    <div><%= message %></div>
-  <% end %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <% article.errors.full_messages_for :title do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </p>
 
-  <%= form.label :body %>
-  <%= form.text_area :body %>
-  <% article.errors.full_messages_for :body do |message| %>
-    <div><%= message %></div>
-  <% end %>
+  <p>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+    <% article.errors.full_messages_for :body do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </p>
 
-  <div>
+  <p>
     <%= form.select :status, Article::VALID_STATUSES, selected: 'public' %>
-  </div>
+  </p>
 
   <div>
     <%= form.submit %>
